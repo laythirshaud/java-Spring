@@ -1,0 +1,22 @@
+package polymorphism 
+java.util.*;
+public class polymorphism {
+	private String color="white";
+	private boolean filled;
+	
+	public polymorphism() {
+	}
+
+	public polymorphism(String color, boolean filled) {
+		super();
+		this.color = color;
+		this.filled = filled;
+	}
+	
+//	public GeometricObject(color:String, filled:boolean) {
+//		String color;
+//	}
+	
+	
+
+}

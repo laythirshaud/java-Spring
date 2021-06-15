@@ -1,0 +1,19 @@
+package polymorphism ;
+
+public class polymorphism {
+	private String color="white";
+	private boolean filled;
+//	private Date;
+	public polymorphism() {
+	}
+
+	public polymorphism(String color, boolean filled) {
+		this.color = color;
+		this.filled = filled;
+		return color;
+		
+		
+	}
+	public 
+	
+}
