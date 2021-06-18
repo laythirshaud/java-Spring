@@ -1,0 +1,9 @@
+.all {
+	
+	text-align: center;
+	width: 500px;
+	border: 1px solid black;
+}
+.but{
+	float: right;
+}
