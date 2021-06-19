@@ -13,6 +13,7 @@
 	<p><strong>Language:</strong>${SanJose}</p>
 	<p><strong>Location:</strong>${ python}</p>
 	<p><strong>Comment:</strong> ${ comment }</p>
+	<a href="/back">Go Back</a>
 </center>
 </body>
 </html>

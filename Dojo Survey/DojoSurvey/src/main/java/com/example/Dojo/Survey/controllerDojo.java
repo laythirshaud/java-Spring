@@ -30,6 +30,10 @@ public class controllerDojo {
 	public String welcome() {
 		return "welcom.jsp";
 	}
+	@RequestMapping("/back")
+	public String back() {
+		return "redirect:/";
+	}
 
 	
 }
