@@ -40,7 +40,6 @@ public class BookServices {
 		book1.setLanguage(lang);
 		book1.setTitle(title);
 		book1.setNumberOfPages(numOfPages);
-		
 		return bookRepository.save(book1);
 	}
 
