@@ -21,13 +21,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 3, max = 200)
     private String title;
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 3, max = 200)
     private String description;
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 2, max = 40)
     private String language;
     @NotNull
     @Min(100)

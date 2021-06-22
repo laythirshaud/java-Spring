@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.MVC.models.Book;
 import com.MVC.services.BookServices;
@@ -51,10 +50,28 @@ public class BooksController {
 		model.addAttribute("book",book);
         return "/books/show.jsp";
     }
-//	@RequestMapping(value="/books/{id}/edit")
-//    public String update(Model model ,@PathVariable("id") Long id, @RequestParam(value="title") String title, @RequestParam(value="description") String desc, @RequestParam(value="language") String lang, @RequestParam(value="pages") Integer numOfPages) {
-//        Book book1 = bookService.updateBook(id, title, desc, lang, numOfPages);
-//        model.addAttribute("book",book1);
-//        return "/books/edit.jsp";
-//	}
+	    @RequestMapping("/books/{id}/edit")
+	    public String edit(@PathVariable("id") Long id, Model model) {
+	        Book book = bookService.findBook(id);
+	        if(book==null)
+	        	return "redirect:/books";
+	        model.addAttribute("book", book);
+	        return "/books/edit.jsp";
+	    }
+	    @RequestMapping(value="/books/{id}", method=RequestMethod.PUT)
+	    public String update(@Valid @ModelAttribute("book") Book book, BindingResult result) {
+	        if (result.hasErrors()) {
+	            return "/books/edit.jsp";
+	        } else {
+	            bookService.updateBook(book.getId(),book.getTitle(),book.getDescription(),book.getLanguage(),book.getNumberOfPages());
+	            return "redirect:/books";
+	        }
+	    }
+	        @RequestMapping(value="/books/{id}", method=RequestMethod.DELETE)
+	        public String destroy(@PathVariable("id") Long id) {
+	            bookService.deleteBook(id);
+	            return "redirect:/books";
+	        }
+	    
+
 }
